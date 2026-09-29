@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodieHub - Food Menu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>🍴 FoodieHub</h1>
+        <p>Delicious food, made with love!</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Home -->
+    <section id="home" class="hero">
+        <h2>Welcome to FoodieHub</h2>
+        <p>Enjoy delicious food at affordable prices.</p>
+        <button onclick="showMenu()">View Menu</button>
+    </section>
+
+    <!-- Menu -->
+    <section id="menu">
+        <h2>Our Menu</h2>
+
+        <!-- Categories -->
+        <div class="categories">
+            <button onclick="filterFood('all')">All</button>
+            <button onclick="filterFood('main')">Main Course</button>
+            <button onclick="filterFood('snacks')">Snacks</button>
+            <button onclick="filterFood('dessert')">Desserts</button>
+            <button onclick="filterFood('drinks')">Drinks</button>
+        </div>
+
+        <!-- Food Items -->
+        <div class="food-container">
+
+            <div class="food-card main">
+                <div class="food-icon">🍕</div>
+                <h3>Chicken Pizza</h3>
+                <p>Chicken, cheese and tomato sauce.</p>
+                <h4>₹249</h4>
+                <button onclick="orderFood('Chicken Pizza')">Order Now</button>
+            </div>
+
+            <div class="food-card main">
+                <div class="food-icon">🍔</div>
+                <h3>Chicken Burger</h3>
+                <p>Juicy chicken burger with fresh vegetables.</p>
+                <h4>₹149</h4>
+                <button onclick="orderFood('Chicken Burger')">Order Now</button>
+            </div>
+
+            <div class="food-card main">
+                <div class="food-icon">🍛</div>
+                <h3>Chicken Biriyani</h3>
+                <p>Traditional spicy chicken biriyani.</p>
+                <h4>₹180</h4>
+                <button onclick="orderFood('Chicken Biriyani')">Order Now</button>
+            </div>
+
+            <div class="food-card snacks">
+                <div class="food-icon">🍟</div>
+                <h3>French Fries</h3>
+                <p>Crispy golden french fries.</p>
+                <h4>₹99</h4>
+                <button onclick="orderFood('French Fries')">Order Now</button>
+            </div>
+
+            <div class="food-card snacks">
+                <div class="food-icon">🥪</div>
+                <h3>Club Sandwich</h3>
+                <p>Fresh vegetables, cheese and chicken.</p>
+                <h4>₹129</h4>
+                <button onclick="orderFood('Club Sandwich')">Order Now</button>
+            </div>
+
+            <div class="food-card dessert">
+                <div class="food-icon">🍰</div>
+                <h3>Chocolate Cake</h3>
+                <p>Soft chocolate cake with cream.</p>
+                <h4>₹120</h4>
+                <button onclick="orderFood('Chocolate Cake')">Order Now</button>
+            </div>
+
+            <div class="food-card dessert">
+                <div class="food-icon">🍨</div>
+                <h3>Ice Cream</h3>
+                <p>Cold and creamy vanilla ice cream.</p>
+                <h4>₹80</h4>
+                <button onclick="orderFood('Ice Cream')">Order Now</button>
+            </div>
+
+            <div class="food-card drinks">
+                <div class="food-icon">🥤</div>
+                <h3>Cold Coffee</h3>
+                <p>Refreshing chilled coffee.</p>
+                <h4>₹100</h4>
+                <button onclick="orderFood('Cold Coffee')">Order Now</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <p>📞 +91 98765 43210</p>
+        <p>📧 hello@foodiehub.com</p>
+        <p>📍 Kerala, India</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 FoodieHub. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
