@@ -98,6 +98,38 @@ button:hover {
     margin-bottom: 30px;
 }
 
+.filter-btn {
+    margin: 5px;
+    transition: 0.3s;
+}
+
+/* Active category colors */
+
+.filter-btn.active {
+    color: white;
+    transform: scale(1.05);
+}
+
+.all-btn.active {
+    background-color: #ff5722;
+}
+
+.main-btn.active {
+    background-color: #2196f3;
+}
+
+.snacks-btn.active {
+    background-color: #ff9800;
+}
+
+.dessert-btn.active {
+    background-color: #9c27b0;
+}
+
+.drinks-btn.active {
+    background-color: #009688;
+}
+
 .categories button {
     margin: 5px;
 }

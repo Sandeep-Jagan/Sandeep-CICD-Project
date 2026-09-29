@@ -34,13 +34,13 @@
         <h2>Our Menu</h2>
 
         <!-- Categories -->
-        <div class="categories">
-            <button onclick="filterFood('all')">All</button>
-            <button onclick="filterFood('main')">Main Course</button>
-            <button onclick="filterFood('snacks')">Snacks</button>
-            <button onclick="filterFood('dessert')">Desserts</button>
-            <button onclick="filterFood('drinks')">Drinks</button>
-        </div>
+ <div class="categories">
+    <button class="filter-btn active all-btn" onclick="filterFood('all', this)">All</button>
+    <button class="filter-btn main-btn" onclick="filterFood('main', this)">Main Course</button>
+    <button class="filter-btn snacks-btn" onclick="filterFood('snacks', this)">Snacks</button>
+    <button class="filter-btn dessert-btn" onclick="filterFood('dessert', this)">Desserts</button>
+    <button class="filter-btn drinks-btn" onclick="filterFood('drinks', this)">Drinks</button>
+</div>
 
         <!-- Food Items -->
         <div class="food-container">

@@ -7,10 +7,22 @@ function showMenu() {
 
 
 // Filter food items
-function filterFood(category) {
+function filterFood(category, button) {
 
+    // Remove active class from all buttons
+    const buttons = document.querySelectorAll(".filter-btn");
+
+    buttons.forEach(function(btn) {
+        btn.classList.remove("active");
+    });
+
+    // Highlight the selected button
+    button.classList.add("active");
+
+    // Get all food cards
     const foods = document.querySelectorAll(".food-card");
 
+    // Show/hide food cards
     foods.forEach(function(food) {
 
         if (category === "all") {
