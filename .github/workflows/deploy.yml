@@ -1,0 +1,78 @@
+
+name: Sandeep Github CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: cloudops-deployment
+  cancel-in-progress: false
+
+jobs:
+  build-test-deploy:
+    name: Build, Test and Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v4
+
+      - name: Validate required files
+        run: |
+          test -f src/index.html
+          test -f src/style.css
+          test -f src/script.js
+          test -f tests/test.sh
+
+      - name: Run application tests
+        run: bash tests/test.sh
+
+      - name: Build application
+        run: |
+          mkdir -p dist
+          cp -r src/. dist/
+          test -f dist/index.html
+          test -f dist/style.css
+          test -f dist/script.js
+
+      - name: Validate AWS configuration
+        env:
+          AWS_ROLE_ARN: ${{ vars.AWS_ROLE_ARN }}
+          AWS_REGION: ${{ vars.AWS_REGION }}
+          S3_BUCKET: ${{ vars.S3_BUCKET }}
+        run: |
+          set -e
+          test -n "$AWS_ROLE_ARN" || {
+            echo "AWS_ROLE_ARN variable is missing"
+            exit 1
+          }
+          test -n "$AWS_REGION" || {
+            echo "AWS_REGION variable is missing"
+            exit 1
+          }
+          test -n "$S3_BUCKET" || {
+            echo "S3_BUCKET variable is missing"
+            exit 1
+          }
+
+      - name: Configure AWS credentials using OIDC
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
+          aws-region: ${{ vars.AWS_REGION }}
+
+      - name: Verify AWS identity
+        run: aws sts get-caller-identity
+
+      - name: Deploy website to Amazon S3
+        env:
+          S3_BUCKET: ${{ vars.S3_BUCKET }}
+        run: |
+          aws s3 sync dist/ "s3://${S3_BUCKET}/" --delete
