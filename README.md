@@ -1,31 +1,30 @@
-# GitHub Actions CI/CD Project
-## Knowledge Transfer (KT) Document
+# Knowledge Transfer (KT) Document: GitHub Actions CI/CD to AWS S3
 
-| Item | Details |
-|---|---|
-| Project | Sandeep CICD Project |
-| GitHub repository | `Sandeep-Jagan/Sandeep-CICD-Project` |
-| GitHub branch | `main` |
-| AWS account | `767260371307` |
-| AWS Region | `us-east-1` |
-| IAM deployment role | `GitHubActions-Sandeep-S3-Deploy` |
-| IAM policy | `GitHubActions-Sandeep-S3-Policy` |
-| Deployment target | Amazon S3 |
-| Authentication | GitHub OIDC and AWS IAM role assumption |
-| CodeCommit repository | `Sandeep-cicd-task-repo` |
-| Document version | 1.1 |
-| Last updated | October 2026 |
-| Current status | GitHub Actions tests/build, OIDC authentication, and S3 deployment succeeded; CodeCommit repository and SSH setup documented below. |
+**Project:** GitHub Actions CI/CD Demo  
+**Prepared for:** Performance Evaluation / CI/CD Demonstration  
+**Status:** GitHub Actions build, tests, AWS OIDC authentication, and S3 deployment have succeeded.
 
----
+## 1. Project Objective
 
-## 1. Project Overview
+Build a simple static website and automate validation, testing, packaging, and deployment using GitHub Actions. The pipeline deploys the generated website to an Amazon S3 bucket. GitHub Actions obtains temporary AWS credentials through OpenID Connect (OIDC), avoiding long-lived AWS access keys in GitHub.
 
-This project demonstrates a basic continuous integration and continuous deployment (CI/CD) pipeline using Git, GitHub, GitHub Actions, AWS IAM, GitHub OpenID Connect (OIDC), Amazon S3, and AWS CodeCommit.
+## 2. High-Level Architecture
 
-The application is a static website developed using HTML, CSS, and JavaScript. A push to the `main` branch triggers GitHub Actions. The workflow validates the project files, runs tests, prepares a build directory, obtains temporary AWS credentials using OIDC, and synchronizes the built website to Amazon S3.
+1. Developer commits and pushes changes to the `main` branch in GitHub.
+2. GitHub Actions checks out the repository.
+3. The workflow verifies that required application and test files exist.
+4. Automated shell tests run.
+5. The workflow creates a `dist/` build directory from the contents of `src/`.
+6. GitHub Actions requests an OIDC token and assumes a restricted AWS IAM role.
+7. The workflow verifies the AWS identity and synchronizes `dist/` to the configured S3 bucket.
+8. The deployed static website can be opened using the bucket's configured website endpoint, if static website hosting and public access are configured.
 
-### High-level architecture
+## 3. Repository and Project Structure
+
+**GitHub repository:** `Sandeep-Jagan/Sandeep-CICD-Project`  
+**Branch:** `main`
+
+Expected project structure:
 
 ```text
 Developer changes code
