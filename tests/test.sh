@@ -17,7 +17,7 @@ if [ ! -f "src/script.js" ]; then
     exit 1
 fi
 
-grep -q "<title>Github CI/CD Demo</title>" src/index.html
+grep -q "<title>FoodieHub - Food Menu</title>" src/index.html
 
 if [ $? -ne 0 ]; then
     echo "ERROR: Application title not found"
