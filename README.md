@@ -2,7 +2,6 @@
 
 **Project:** GitHub Actions CI/CD Demo  
 **Prepared for:** Performance Evaluation / CI/CD Demonstration  
-**Target demo date:** 28 October 2026  
 **Status:** GitHub Actions build, tests, AWS OIDC authentication, and S3 deployment have succeeded.
 
 ## 1. Project Objective
