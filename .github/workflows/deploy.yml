@@ -1,5 +1,5 @@
 
-name: Sandeep Github CI/CD Pipeline
+name: sandeep Github CI/CD Pipeline 
 
 on:
   push:
