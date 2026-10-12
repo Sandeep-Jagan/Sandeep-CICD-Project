@@ -130,8 +130,29 @@ button:hover {
     background-color: #009688;
 }
 
+
+/* Category filter buttons */
 .categories button {
     margin: 5px;
+    background-color: #eeeeee;
+    color: #333333;
+    border: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+/* Hover effect */
+.categories button:hover {
+    background-color: #ffccbc;
+    color: #bf360c;
+}
+
+/* Active category button */
+.categories button.active {
+    background-color: #ff5722;
+    color: white;
+    border-color: #e64a19;
+    font-weight: bold;
+    box-shadow: 0 3px 8px rgba(255, 87, 34, 0.3);
 }
 
 /* Food Cards */
