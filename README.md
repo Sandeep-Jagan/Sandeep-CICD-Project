@@ -6,7 +6,7 @@
 
 ## 1. Project Objective
 
-Build a simple static website and automate validation, testing, packaging, and deployment using GitHub Actions. The pipeline deploys the generated website to an Amazon S3 bucket. GitHub Actions obtains temporary AWS credentials through OpenID Connect (OIDC), avoiding long-lived AWS access keys in GitHub.
+Build a simple static website and automate validation, testing, packaging, and deployment using GitHub Actions. The pipeline deploys the generated website to an Amazon S3 bucket. 
 
 ## 2. Architecture
 
@@ -58,7 +58,6 @@ The objective is to demonstrate an automated deployment triggered by a source-co
 - Deploy the website to Amazon S3.
 - Configure secure GitHub-to-AWS authentication using OIDC.
 - Limit AWS permissions using IAM and the principle of least privilege.
-- Maintain a copy of the project in AWS CodeCommit.
 - Document the setup, workflow, troubleshooting, and operational steps.
 
 ## 3. Technologies Used
