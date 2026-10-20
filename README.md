@@ -8,7 +8,7 @@
 
 Build a simple static website and automate validation, testing, packaging, and deployment using GitHub Actions. The pipeline deploys the generated website to an Amazon S3 bucket. GitHub Actions obtains temporary AWS credentials through OpenID Connect (OIDC), avoiding long-lived AWS access keys in GitHub.
 
-## 2. High-Level Architecture
+## 2. Architecture
 
 1. Developer commits and pushes changes to the `main` branch in GitHub.
 2. GitHub Actions checks out the repository.
