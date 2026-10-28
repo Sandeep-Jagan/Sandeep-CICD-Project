@@ -4,7 +4,7 @@ name: sandeep Github CI/CD Pipeline
 on:
   push:
     branches:
-      - develop
+      - main
   workflow_dispatch:
 
 permissions:
