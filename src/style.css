@@ -134,7 +134,7 @@ button:hover {
 /* Category filter buttons */
 .categories button {
     margin: 5px;
-    background-color: #eeeeee;
+    background-color: #ff0000;
     color: #333333;
     border: 2px solid transparent;
     transition: all 0.2s ease;
