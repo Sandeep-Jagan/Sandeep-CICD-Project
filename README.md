@@ -17,7 +17,7 @@ Build a simple static website and automate validation, testing, packaging, and d
 5. The workflow creates a `dist/` build directory from the contents of `src/`.
 6. GitHub Actions requests an OIDC token and assumes a restricted AWS IAM role.
 7. The workflow verifies the AWS identity and synchronizes `dist/` to the configured S3 bucket.
-8. The deployed static website can be opened using the bucket's configured website endpoint, if static website hosting and public access are configured.
+8. The deployed static website can be opened using the bucket's configured website endpoint.
 
 ## 3. Repository and Project Structure
 
